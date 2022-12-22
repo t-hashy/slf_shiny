@@ -87,4 +87,4 @@ tryCatch(
 df_wb <- df_temp
 
 # Check the data
-checkData(df_wb)
+plt <- checkData(df_wb)

@@ -1,0 +1,11 @@
+name: testapp
+title:
+username:
+account: t-hashy
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7931409
+bundleId: 6663935
+url: https://t-hashy.shinyapps.io/testapp/
+when: 1671699551.13362
+lastSyncTime: 1671699551.13363
