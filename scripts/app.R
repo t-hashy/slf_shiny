@@ -7,9 +7,9 @@ ui <- fluidPage(
 )
 
 server <- function(input, output, session){
-  output$feelings <- readerText({
+  output$feelings <- renderText({
     paste0("Feelings: ", input$feelings)
   })
 }
 
-sinyApp(ui, server)
+shinyApp(ui, server)
