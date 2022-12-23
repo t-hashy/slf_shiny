@@ -10,51 +10,6 @@ library(GGally) # for ggpairs: Multiple variables
 data_dir = "../data"
 file_wb = "data.feather"
 
-# ---- Utility functions ----
-
-# Data files
-getStrNow <- function(){
-  return(format(Sys.time(), "%Y%m%d-%H%M"))
-}
-makeFilePath <- function(title = "test", extension = ".feather", datetime = TRUE){
-  if(datetime){
-    title = paste(title, getStrNow(), sep = "_")
-  }
-  path <- paste(data_dir, "/", title, extension, sep = "")
-  
-  return(path)
-}
-
-# Data checks
-checkData <- function(df){
-  message("==== Glimpse ====")
-  print(glimpse(df))
-  message("==== Summary ==== ")
-  print(summary(df))
-  tryCatch(
-    {
-      tryCatch(
-        {
-          df <- df %>% select(!c(uid))
-          if(length(df$expired[df$expired == TRUE]) > 2){
-            ggpairs(df, mapping = aes(colour = df$expired))
-            message("==== Plot without uid and with the factor of expired ====")
-          }else{
-            df <- df %>% select(!expired)
-            ggpairs(df)
-            message("==== Plot without uid and expired ====")
-          }
-        }, 
-        error = function(err) {
-          ggpairs(df)
-          message("==== Plot all ====")
-        }
-      )
-    },
-    error = function(err) message("*Having Some Plotting Errors.")
-  )
-}
-
 # ---- Set data frames ----
 
 # Create an empty data frame
