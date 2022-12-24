@@ -29,7 +29,7 @@ checktheData <- function(df){
   message("==== SUMMARY ==== ")
   print(summary(df))
   
-  message("==== PLOT")
+  message("==== PLOT ====")
   plot(df)
   
 }
