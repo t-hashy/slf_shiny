@@ -1,0 +1,34 @@
+---
+title: "Work Management"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 7
+    highlight: tango
+    number_sections: yes
+    theme: cerulean
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+  pdf_document: default
+  word_document:
+    toc: yes
+    toc_depth: '2'
+params:
+  n: NA
+---
+
+# Flow
+1. Task and Remaining visualization
+  1. Create Project management scripts
+    1. Create data sheet
+    1. Show task table
+    1. Show task calendars
+  2. Create shiny app
+    - [Refference](https://github.com/amitvkulkarni/ProjectManagement)
+  3. Add log-in with secure_app function
+    - [Reference](https://rdrr.io/cran/shinymanager/man/secure-app.html)
+  4. Deploy
+2. Predictions with plan and real time
